@@ -13,6 +13,9 @@ app.use(express.urlencoded({ limit: '30mb', extended: true}))
 app.use(cors())
 // Routes
 app.use('/posts', postRoutes)
+app.get('/', (req, res) => {
+  res.send('Hello to memories API')
+})
 
 // Mongoose connection
 const { CONNECTION_URL, PORT } = process.env
